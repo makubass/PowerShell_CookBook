@@ -1,0 +1,13 @@
+[タイトル]
+1.7_PowerShellの外からPowerShllスクリプトを呼び出す
+
+[説明]
+バッチファイル、ログオンスクリプト、タスクスケジューラ等、PowerShell以外のアプリから、
+PowerShellを呼び出したい。
+パスにスペースが含まれているときは、頭に&（アンパサンド）を付ける。
+
+[構文]
+Powershell "& 'スクリプトの古パス' arguments"
+
+[例]
+Powershell "& 'c:\shared scripts\Get-Report.ps1' Hello World"

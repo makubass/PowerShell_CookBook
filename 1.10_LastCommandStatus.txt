@@ -1,0 +1,31 @@
+[タイトル]
+1.10_最後に実行したコマンドのステータスを確認する
+
+[構文]
+$? > True or False
+$LastExitCode > 0 or 1
+
+[例]
+
+PS C:\WINDOWS\system32> ping localhost
+
+HIROFUMI-DESK [::1]に ping を送信しています 32 バイトのデータ:
+::1 からの応答: 時間 <1ms
+::1 からの応答: 時間 <1ms
+::1 からの応答: 時間 <1ms
+::1 からの応答: 時間 <1ms
+
+::1 の ping 統計:
+    パケット数: 送信 = 4、受信 = 4、損失 = 0 (0% の損失)、
+ラウンド トリップの概算時間 (ミリ秒):
+    最小 = 0ms、最大 = 0ms、平均 = 0ms
+PS C:\WINDOWS\system32> $?
+True
+PS C:\WINDOWS\system32> $lastExitCode
+0
+PS C:\WINDOWS\system32> ping missing-host
+ping 要求ではホスト missing-host が見つかりませんでした。ホスト名を確認してもう一度実行してください。
+PS C:\WINDOWS\system32> $?
+False
+PS C:\WINDOWS\system32> $lastExitCode
+1
